@@ -1,0 +1,23 @@
+###################################
+# Syntax coloring for SimpleStack #
+###################################
+# Class (KEYWORD1)                #
+###################################
+
+SimpleStack	KEYWORD1
+
+###################################
+# Methods (KEYWORD2)              #
+###################################
+
+push	KEYWORD2
+pop	KEYWORD2
+peek	KEYWORD2
+get	KEYWORD2
+getSize	KEYWORD2
+isEmpty	KEYWORD2
+isFull	KEYWORD2
+
+###################################
+# Constants (LITERAL1)            #
+###################################
