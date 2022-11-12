@@ -17,6 +17,7 @@ get	KEYWORD2
 getSize	KEYWORD2
 isEmpty	KEYWORD2
 isFull	KEYWORD2
+empty   KEYWORD2
 
 ###################################
 # Constants (LITERAL1)            #
