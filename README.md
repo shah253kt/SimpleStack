@@ -1,5 +1,6 @@
 # SimpleStack
 As the name suggest, this library allows you to create simple stack of arbitrary datatypes on Arduino.
+Checkout `FullFeatures.ino` example to see all of the main features in use.
 
 # API
 ## `SimpleStack<T>(uint16_t size)`
