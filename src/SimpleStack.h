@@ -9,7 +9,7 @@
 template <class T>
 class SimpleStack {
   private:
-    T *stack;
+    T *mStack;
     uint16_t mMaxSize, mCurrentSize;
 
   public:
@@ -22,7 +22,7 @@ class SimpleStack {
       mCurrentSize(0),
       mMaxSize(size)
     {
-      stack = new T[size];
+      mStack = new T[size];
     }
 
     /**
@@ -30,7 +30,7 @@ class SimpleStack {
      * 
      */
     ~SimpleStack() {
-      delete [] stack;
+      delete [] mStack;
     }
 
     /**
@@ -45,7 +45,7 @@ class SimpleStack {
         return false;
       }
 
-      stack[mCurrentSize++] = obj;
+      mStack[mCurrentSize++] = obj;
       return true;
     }
 
@@ -61,7 +61,7 @@ class SimpleStack {
         return false;
       }
 
-      *obj = stack[--mCurrentSize];
+      *obj = mStack[--mCurrentSize];
       return true;
     }
 
@@ -77,7 +77,7 @@ class SimpleStack {
         return false;
       }
 
-      *obj = stack[mCurrentSize - 1];
+      *obj = mStack[mCurrentSize - 1];
       return true;
     }
 
@@ -94,7 +94,7 @@ class SimpleStack {
         return false;
       }
 
-      *obj = stack[index];
+      *obj = mStack[index];
       return true;
     }
 
@@ -105,6 +105,34 @@ class SimpleStack {
      */
     uint16_t getSize() {
       return mCurrentSize;
+    }
+
+    /**
+     * @brief Set the new max size of the stack
+     * 
+     * @param size Maximum number of objects to fill the stack with.
+     */
+    void setMaxSize(uint16_t size) {
+      uint16_t currentSize = mCurrentSize;
+      mCurrentSize = 0;
+      mMaxSize = size;
+      T *tempStack = mStack;
+      mStack = new T[size];
+
+      for (uint16_t i=0; i<currentSize; i++) {
+        push(tempStack[i]);
+      }
+
+      delete [] tempStack;
+    }
+
+    /**
+     * @brief Get the max size of the stack
+     * 
+     * @return uint16_t Maximum number of objects to fill the stack with.
+     */
+    uint16_t getMaxSize() {
+      return mMaxSize;
     }
 
     /**
