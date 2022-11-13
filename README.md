@@ -1,4 +1,4 @@
-# SimpleStack
+# SimpleStack [![.github/workflows/main.yml](https://github.com/shah253kt/SimpleStack/actions/workflows/main.yml/badge.svg)](https://github.com/shah253kt/SimpleStack/actions/workflows/main.yml)
 As the name suggest, this library allows you to create simple stack of arbitrary datatypes on Arduino.
 Checkout `FullFeatures.ino` example to see all of the main features in use.
 
