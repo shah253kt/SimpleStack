@@ -10,7 +10,8 @@ template <class T>
 class SimpleStack {
   private:
     T *mStack;
-    uint16_t mMaxSize, mCurrentSize;
+    uint16_t mCurrentSize;
+    uint16_t mMaxSize;
 
   public:
     /**
